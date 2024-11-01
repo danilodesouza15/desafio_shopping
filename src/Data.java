@@ -22,6 +22,10 @@ public class Data {
 
     private boolean isDataValida(int dia, int mes, int ano) {
 
+        if (ano <= 0){
+            return false;
+        }
+
         if (mes < 1 || mes > 12) {
             return false; // Mês inválido
         }
@@ -55,6 +59,19 @@ public class Data {
         return (ano % 400 == 0) || ((ano % 4 == 0) && (ano % 100 != 0));
     }
 
+    public boolean isBefore(Data outraData) {
+        // Compara ano, mês e dia para determinar se esta data é anterior à outra
+        if (ano < outraData.ano) {
+            return true;
+        } else if (ano == outraData.ano && mes < outraData.mes) {
+            return true;
+        } else if (ano == outraData.ano && mes == outraData.mes && dia < outraData.dia) {
+            return true;
+        }
+        return false;
+
+    }
+
     // Métodos Getters
     public int getDia() {
         return dia; // Retorna o dia
@@ -80,7 +97,7 @@ public class Data {
         this.ano = ano; // Define um novo valor para o ano
     }
 
-    //Metodo toString para exibir a data no formato "dia/mês/ano"
+    // toString para exibir a data no formato "dia/mês/ano"
     @Override
     public String toString() {
         return dia + "/" + mes + "/" + ano; // Retorna a data em formato legível

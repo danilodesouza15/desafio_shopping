@@ -53,8 +53,12 @@ public class Principal {
                     String nomeDaRua = sc.nextLine();
                     System.out.print("Digite o número: ");
                     String numero = sc.nextLine();
-                    System.out.print("Digite o complemento (caso haja): ");
+                    System.out.print("Digite o complemento (Teclar 'Enter' e pular para a próxima etapa): ");
                     String complemento = sc.nextLine();
+                    if (complemento.isEmpty()){
+                        complemento = "Sem complemento";
+                        System.out.println("Considerando 'sem complemento'.");
+                    }
                     System.out.print("Digite o nome da cidade: ");
                     String cidade = sc.nextLine();
                     System.out.print("Digite o nome do estado: ");
@@ -79,7 +83,7 @@ public class Principal {
                     System.out.println("Endereço: " + loja.getEndereco().getNomeDaRua() + ", " + loja.getEndereco().getNumero() + ", "
                             + loja.getEndereco().getComplemento() + ", " + loja.getEndereco().getCidade() + ", " + loja.getEndereco().getEstado()
                             + ", " + loja.getEndereco().getPais() + ", " + loja.getEndereco().getCep());
-                    System.out.println("Data de Fundação: " + loja.getDataDeFundacao().toString());
+                    System.out.println("Data de Fundação: " + loja.getDataFundacao().toString());
                     System.out.println("Gastos com salário: " + loja.gastosComSalario());
                     System.out.println("Tamanho da loja: " + loja.tamanhoDaLoja());
 

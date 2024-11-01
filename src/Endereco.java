@@ -72,4 +72,17 @@ public class Endereco {
     public void setComplemento(String complemento) {
         this.complemento = complemento;
     }
+
+    @Override
+    public String toString() {
+        return "Endereco{" +
+                "nomeDaRua='" + nomeDaRua + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", estado='" + estado + '\'' +
+                ", pais='" + pais + '\'' +
+                ", cep='" + cep + '\'' +
+                ", numero='" + numero + '\'' +
+                ", complemento='" + complemento + '\'' +
+                '}';
+    }
 }

@@ -18,7 +18,7 @@ public class Produto {
         this.preco = preco;
     }
 
-    public void setDataDeValidade(Data dataValidade) {
+    public void setDataValidade(Data dataValidade) {
         this.dataValidade = dataValidade;
     }
 
@@ -34,22 +34,10 @@ public class Produto {
         return dataValidade;
     }
 
-    public boolean estaVencido(Data dataAtual) {
-        // Verifica se o ano de validade é menor que o ano atual
-        if (dataValidade.getAno() < dataAtual.getAno()) {
-            return true; //venceu
-            // Verifica se o ano de validade é igual ao ano atual
-        } else if (dataValidade.getAno() == dataAtual.getAno()) {
-            // Verifica se o mês de validade é menor que o mês atual
-            if (dataValidade.getMes() < dataAtual.getMes())
-                return true; //venceu
-            // Verifica se o mês de validade é igual ao mês atual
-        } else if (dataValidade.getMes() == dataAtual.getMes()) {
-            // Verifica se o dia de validade é menor que o dia atual
-            return dataValidade.getDia() < dataAtual.getDia(); //retorna true se estiver vencido
-        }
-        return false;
+    public boolean estaVencido(Data dataComparacao) {
+        return dataValidade.isBefore(dataComparacao);
     }
+
     @Override
     public String toString() {
         return "Produto{" +
