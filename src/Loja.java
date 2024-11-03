@@ -7,16 +7,16 @@ public class Loja {
     private Endereco endereco;
     private Data dataFundacao;
 
-    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
         this.endereco = endereco;
-        this.dataFundacao = dataDeFundacao;
+        this.dataFundacao = dataFundacao;
     }
 
-    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataDeFundacao) {
-        this(nome, quantidadeFuncionarios, -1,endereco,dataDeFundacao);
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
+        this(nome, quantidadeFuncionarios, -1,endereco,dataFundacao);
 
     }
 

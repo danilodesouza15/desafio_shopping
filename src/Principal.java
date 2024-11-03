@@ -139,7 +139,7 @@ public class Principal {
             }
 
             if (opcao == 2 && produto != null) {
-                // Verificação da validade
+                // Verificação da validade do produto
                 Data dataAtual = new Data(20, 10, 2023);
                 if (produto.estaVencido(dataAtual)) {
                     System.out.println("PRODUTO VENCIDO");
@@ -147,7 +147,7 @@ public class Principal {
                     System.out.println("PRODUTO NÃO VENCIDO");
                 }
             }
-        } while (opcao != 3);
+        } while (opcao != 3); // Enquanto a opção escolhida for diferente de 3, o menu será novamente exibido na tela.
 
         sc.close();
     }
